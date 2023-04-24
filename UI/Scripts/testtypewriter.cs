@@ -7,11 +7,9 @@ public class testtypewriter : MonoBehaviour
 {
     public float delay = 0.1f;                  // Delay between each character
     public Text textComponent;                 // Text component to display the text
-    public List<Image> imageComponents;        // List of Image components to apply fade effects
-    public GameObject targetGameObject;        // GameObject to make visible
     public string[] texts;                     // Array of texts to be typed
-    public float fadeDuration = 1.0f;           // Duration of the fade effect
-    public Color fadeColor;                    // Color of the fade effect
+    public GameObject objectToHide;            // GameObject to hide after all text has been displayed
+    public GameObject objectToShow;            // GameObject to show after all text has been displayed
 
     private int currentTextIndex = 0;          // Index of the current text being displayed
     private Coroutine typingCoroutine;         // Coroutine for typing effect
@@ -56,32 +54,23 @@ public class testtypewriter : MonoBehaviour
         currentTextIndex++;
         if (currentTextIndex >= texts.Length)
         {
-            currentTextIndex = 0;
-            if (targetGameObject != null)
+            // All texts have been displayed, hide objectToHide and show objectToShow
+            if (objectToHide != null)
             {
-                targetGameObject.SetActive(true);
+                objectToHide.SetActive(false);
             }
+
+            if (objectToShow != null)
+            {
+                objectToShow.SetActive(true);
+            }
+
+            // Stop typing
+            StopCoroutine(typingCoroutine);
+            yield break;
         }
 
-        foreach (Image imageComponent in imageComponents)
-        {
-            StartCoroutine(FadeImage(imageComponent));
-        }
-    }
-
-    IEnumerator FadeImage(Image imageComponent)
-    {
-        float elapsedTime = 0;
-        Color originalColor = imageComponent.color;
-        Color targetColor = fadeColor;
-        while (elapsedTime < fadeDuration)
-        {
-            float t = elapsedTime / fadeDuration;
-            imageComponent.color = Color.Lerp(originalColor, targetColor, t);
-            elapsedTime += Time.deltaTime;
-            yield return null;
-        }
-        imageComponent.color = targetColor;
+        // Continue typing
         typingCoroutine = StartCoroutine(TypeText());
     }
 }

@@ -1290,7 +1290,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &572449860
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1501,7 +1501,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &668989891
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1588,9 +1588,11 @@ MonoBehaviour:
   - {fileID: 2120559178, guid: 545a180326b824cf2b3065527c778640, type: 3}
   customKeys: 1a0100001b0100001c010000
   musicVolume: 0
-  sceneToLoad: 
+  sceneIndexOffset: 1
   fadeObject: {fileID: 985977723}
   fadeDuration: 1
+  hideObject: {fileID: 668989890}
+  showObject: {fileID: 572449859}
 --- !u!1 &748747017
 GameObject:
   m_ObjectHideFlags: 0
@@ -2400,7 +2402,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!82 &1124515961
 AudioSource:
   m_ObjectHideFlags: 0
@@ -2797,7 +2799,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   delay: 0.04
   pauseDelays:
-  - 5
+  - 4
   - 3
   - 3
   - 3
@@ -2825,6 +2827,8 @@ MonoBehaviour:
     AND  COMMANDER  LORI  BERGIN  AND  THEIR  STARSHIP.  THE  E.F.D  INTER-TRAX 
     SCANNER  PICKED  UP  SIGNALS  FROM  A  HUGE  OBJECT  MOVING  TOWARDS  PLANET 
     TERRAINIA.  ENGAGE  AND  TERMINATE  COMMANDERS!  GOOD  LUCK!
+  hideGameObject: {fileID: 489940286}
+  showGameObject: {fileID: 668989890}
 --- !u!114 &1327036443
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3493,14 +3497,15 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1696279338}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 66de3dafb9dad4f92870945b33cf336f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   OnStartSwitchToBoot: 1
+  IntroSequence: {fileID: 0}
   MainMenu: {fileID: 668989890}
-  InGameUI: {fileID: 572449859}
+  InGameHUD: {fileID: 0}
   BootTextWaitTime: 5
 --- !u!1 &1703459941
 GameObject:

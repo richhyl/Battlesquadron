@@ -10,9 +10,11 @@ public class testmenubuttons : MonoBehaviour
     public Sprite[] newSprites;
     public KeyCode[] customKeys;
     public float musicVolume = 0;
-    public string sceneToLoad;
+    public int sceneIndexOffset = 1;
     public GameObject fadeObject;
     public float fadeDuration = 1.0f;
+    public GameObject hideObject;
+    public GameObject showObject;
 
     private Sprite[] oldSprites;
     private bool fading = false;
@@ -31,22 +33,28 @@ public class testmenubuttons : MonoBehaviour
 
     void Update()
     {
+        if (Input.GetButtonDown("Fire1") && !fading)
+        {
+            int nextSceneIndex = SceneManager.GetActiveScene().buildIndex + sceneIndexOffset;
+            if (nextSceneIndex < SceneManager.sceneCountInBuildSettings)
+            {
+                if (hideObject != null)
+                {
+                    hideObject.SetActive(false);
+                }
+                if (showObject != null)
+                {
+                    showObject.SetActive(true);
+                }
+                StartCoroutine(LoadSceneWithFade(nextSceneIndex));
+            }
+        }
+
         for (int i = 0; i < customKeys.Length; i++)
         {
-            if (Input.GetKeyDown(customKeys[i]) && !fading)
+            if (Input.GetKeyDown(customKeys[i]) && !fading && customKeys[i] != KeyCode.F5)
             {
-                if (customKeys[i] == KeyCode.F5)
-                {
-                    StartCoroutine(LoadSceneWithFade(sceneToLoad)); //TODO need to load the proper scene a string is no good here. Build index would be best.
-                }
-                else
-                {
-                    ToggleSprite(images[i], oldSprites[i], newSprites[i]);
-                    if (customKeys[i] == KeyCode.F5)
-                    {
-                        AudioListener.volume = musicVolume;
-                    }
-                }
+                ToggleSprite(images[i], oldSprites[i], newSprites[i]);
             }
         }
     }
@@ -66,7 +74,7 @@ public class testmenubuttons : MonoBehaviour
         }
     }
 
-    IEnumerator LoadSceneWithFade(string sceneName)
+    IEnumerator LoadSceneWithFade(int sceneIndex)
     {
         fading = true;
         if (fadeObject != null)
@@ -84,6 +92,6 @@ public class testmenubuttons : MonoBehaviour
             }
         }
 
-        SceneManager.LoadScene(sceneName);
+        SceneManager.LoadScene(sceneIndex);
     }
 }

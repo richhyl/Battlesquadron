@@ -9,6 +9,8 @@ public class testtypewriter : MonoBehaviour
     public float[] pauseDelays;                 // Array of pause delays, one for each text
     public TMP_Text textComponent;              // Text component to display the text
     public string[] texts;                     // Array of texts to be typed
+    public GameObject hideGameObject;           // Game object to hide
+    public GameObject showGameObject;           // Game object to show
 
     private int currentTextIndex = 0;          // Index of the current text being displayed
     private Coroutine typingCoroutine;         // Coroutine for typing effect
@@ -43,7 +45,9 @@ public class testtypewriter : MonoBehaviour
         currentTextIndex++;
         if (currentTextIndex >= texts.Length)
         {
-            currentTextIndex = 0;
+            hideGameObject.SetActive(false);
+            showGameObject.SetActive(true);
+            yield break;
         }
 
         typingCoroutine = StartCoroutine(TypeText());
