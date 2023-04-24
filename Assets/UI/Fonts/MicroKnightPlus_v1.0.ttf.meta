@@ -1,0 +1,22 @@
+fileFormatVersion: 2
+guid: 07c0a318ae3932f43bb5d9bec5109f43
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontNames:
+  - MicroKnight
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: 0638edba5a5a5494b8618e4e8c88615f, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  useLegacyBoundsCalculation: 0
+  shouldRoundAdvanceValue: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
