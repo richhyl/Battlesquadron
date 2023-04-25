@@ -1110,7 +1110,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &489940287
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3497,15 +3497,15 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1696279338}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 66de3dafb9dad4f92870945b33cf336f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  OnStartSwitchToBoot: 1
-  IntroSequence: {fileID: 0}
+  OnStartSwitchToBoot: 0
+  IntroSequence: {fileID: 1083782496}
   MainMenu: {fileID: 668989890}
-  InGameHUD: {fileID: 0}
+  InGameHUD: {fileID: 572449859}
   BootTextWaitTime: 5
 --- !u!1 &1703459941
 GameObject:

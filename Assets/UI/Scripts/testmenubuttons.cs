@@ -38,14 +38,14 @@ public class testmenubuttons : MonoBehaviour
             int nextSceneIndex = SceneManager.GetActiveScene().buildIndex + sceneIndexOffset;
             if (nextSceneIndex < SceneManager.sceneCountInBuildSettings)
             {
-                if (hideObject != null)
-                {
-                    hideObject.SetActive(false);
-                }
-                if (showObject != null)
-                {
-                    showObject.SetActive(true);
-                }
+                //if (hideObject != null)
+                //{
+                //    hideObject.SetActive(false);
+                //}
+                //if (showObject != null)
+                //{
+                //    showObject.SetActive(true);
+                //}
                 StartCoroutine(LoadSceneWithFade(nextSceneIndex));
             }
         }
