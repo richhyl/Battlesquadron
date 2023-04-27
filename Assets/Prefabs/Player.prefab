@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 1496609219017474995}
   - component: {fileID: 1496609219017474997}
   - component: {fileID: 1496609219017474996}
-  - component: {fileID: 1496609219017474994}
+  - component: {fileID: -4609078770408259118}
   - component: {fileID: 1496609219017474998}
   - component: {fileID: 1496609219017474992}
   - component: {fileID: 1496609219017474999}
@@ -121,7 +121,7 @@ MonoBehaviour:
   bulletPrefab: {fileID: 4417435909876355821, guid: 5282df3bc392a934eae225020860e9ec,
     type: 3}
   fireDelay: 0.25
---- !u!114 &1496609219017474994
+--- !u!114 &-4609078770408259118
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -130,16 +130,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1496609219017475007}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fba8214fe8e301840a7e191e9249fce5, type: 3}
+  m_Script: {fileID: 11500000, guid: bbeb8074e0dcd5049b6743eb66259333, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 5
-  boundary:
-    xMin: 0
-    xMax: 0
-    yMin: 0
-    yMax: 0
-  animator: {fileID: 1496609219017474998}
 --- !u!95 &1496609219017474998
 Animator:
   serializedVersion: 7
@@ -148,7 +142,7 @@ Animator:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1496609219017475007}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: cb2d478b079478d4abd7621d2407b4c3, type: 2}
   m_CullingMode: 0
