@@ -3,10 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class Tetstilemapscroller : MonoBehaviour
+public class CameraScroller : MonoBehaviour
 {
     public float startSpeed;
-    public float slowSpeed;
+    public float upSpeed;
     public float slowDownTime;
     private float elapsedTime;
     private Vector3 startPosition;
@@ -25,7 +25,7 @@ public class Tetstilemapscroller : MonoBehaviour
         }
         else
         {
-            transform.Translate(Vector3.up * slowSpeed * Time.deltaTime);
+            transform.Translate(Vector3.up * upSpeed * Time.deltaTime);
         }
 
         elapsedTime += Time.deltaTime;
