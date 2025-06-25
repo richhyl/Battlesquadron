@@ -17,6 +17,6 @@ public class FireMovement : MonoBehaviour
     {
         
 
-        body.velocity = Quaternion.AngleAxis(phase * Mathf.Sin(Time.time*10f)*2.4f,Vector3.up) * body.velocity;
+        body.linearVelocity = Quaternion.AngleAxis(phase * Mathf.Sin(Time.time*10f)*2.4f,Vector3.up) * body.linearVelocity;
     }
 }

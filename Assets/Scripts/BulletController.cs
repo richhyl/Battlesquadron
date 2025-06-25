@@ -19,7 +19,7 @@ public class BulletController : MonoBehaviour
         tmpVec.y = 0f;
         tmpVec.Normalize();
         transform.eulerAngles = new Vector3(0, 0, transform.eulerAngles.z); //Make the bullets always point forwards like in original
-        GetComponent<Rigidbody>().velocity = tmpVec * speed;
+        GetComponent<Rigidbody>().linearVelocity = tmpVec * speed;
     }
 
     private void Update()

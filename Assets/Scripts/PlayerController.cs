@@ -22,7 +22,7 @@ public class PlayerController : MonoBehaviour
 		float moveVertical = Input.GetAxis ("Vertical");
 
 		Vector2 movement = new Vector2 (moveHorizontal, moveVertical);
-		GetComponent<Rigidbody2D>().velocity = movement * speed;
+		GetComponent<Rigidbody2D>().linearVelocity = movement * speed;
 
         GetComponent<Rigidbody2D>().position = new Vector2
         (
